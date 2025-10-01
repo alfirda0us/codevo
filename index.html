@@ -6,6 +6,8 @@
 <title>Codevo - Home</title>
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="icon" type="svg" href="assets/src/icon/icon.svg">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
 <body>
   <div class="container">
@@ -13,10 +15,64 @@
       <div class="logo">
         <img src="assets/src/icon/iconwithtext.svg" alt="logo">
       </div>
-      <nav class="nav" aria-label="Main Navigation">
-        Belajar | Tentang kami | Berita &amp; Insight
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex gap-lg-5">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav d-flex gap-lg-3">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Belajar
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Semua Kelas</a></li>
+                  <li><a class="dropdown-item" href="#">Kelas Populer</a></li>
+                  <li><a class="dropdown-item" href="#">Kelas Gratis</a></li>
+                  <li><a class="dropdown-item" href="#">Sertifikat</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Tentang Kami
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Profil Codevo</a></li>
+                  <li><a class="dropdown-item" href="#">Tim Pengajar</a></li>
+                  <li><a class="dropdown-item" href="#">Testimoni</a></li>
+                  <li><a class="dropdown-item" href="#">Kontak</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Berita & Insight
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Artikel Terbaru</a></li>
+                  <li><a class="dropdown-item" href="#">Tips Belajar</a></li>
+                  <li><a class="dropdown-item" href="#">Event & Webinar</a></li>
+                  <li><a class="dropdown-item" href="#">Pengunguman</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 ID
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">EN</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-icon d-flex gap-lg-3">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-circle-user"></i>
+          </div>
+        </div>
       </nav>
     </header>
+
+    <main>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/FnBnQsBIuik?si=YWkDO0niLcauuWOt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </main>
 
     <div class="search-input">
       <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor">
@@ -108,5 +164,8 @@
       </div>
     </section>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/fb8d0c8468.js" crossorigin="anonymous"></script>
 </body>
 </html>
