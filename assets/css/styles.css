@@ -42,20 +42,54 @@
   .nav-icon {
     color: var(--blue);
   }
-  .main {
-    height: 75vh;
+  main {
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  main iframe{
+    border-radius: 1rem;
   }
   .search-input {
-    margin-top: 12px; margin-bottom: 20px;
-    display: flex; align-items: center;
+    margin-top: 12px; 
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center;
+    justify-content: start;
   }
   .search-input input[type="text"] {
-    border: 1px solid var(--border); border-radius: 9999px; padding: 6px 12px 6px 36px; width: 100%;
-    font-size: 1rem; color: var(--text-primary);
+    border: 1px solid var(--border); 
+    border-radius: 9999px; 
+    padding: 6px 12px 6px 36px; 
+    width: 100%;
+    font-size: 1rem; 
+    color: var(--text-primary);
   }
   .search-icon {
-    position: relative; left: 32px; pointer-events: none;
+    display: block;
+    /* left: 32px;  */
+    pointer-events: none;
     color: var(--blue);
+  }
+  .highlight {
+    display: flex; 
+    align-items: start; 
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  .highlight-text {
+    max-width: 320px;
+  }
+  .highlight-text h2 {
+    font-weight: 700; font-size: 1.5rem; color: var(--blue); margin-bottom: 6px;
+  }
+  .highlight-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
   }
   .tags {
     display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;
@@ -80,22 +114,6 @@
   .stat-text {
     font-weight: 700; color: var(--text-primary);
   }
-  .highlight {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 32px;
-  }
-  .highlight-text {
-    max-width: 320px;
-  }
-  .highlight-text h2 {
-    font-weight: 700; font-size: 1.5rem; color: var(--blue); margin-bottom: 6px;
-  }
-  .highlight-text p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 12px;
-  }
   .btn-primary {
     background-color: var(--blue); color: var(--white);
     border-radius: 8px; padding: 10px 20px;
@@ -105,9 +123,6 @@
   }
   .btn-primary:hover {
     background-color: #2563eb;
-  }
-  .highlight-image {
-    max-width: 280px;
   }
   .courses-section h3 {
     font-weight: 600; font-size: 1.25rem; margin-bottom: 20px;
