@@ -110,11 +110,40 @@
     margin-bottom: 12px;
   }
   .tags {
-    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tags-animate {
+    overflow: hidden;
+    position: relative;
+  }
+  .tags-inner {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    animation: moveTags 18s linear infinite;
+  }
+  @keyframes moveTags {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
   .tag {
-    border: 1px solid var(--blue); border-radius: 9999px; padding: 6px 14px;
-    font-weight: 500; font-size: 0.875rem; color: var(--blue); cursor: pointer;
+    border: 1px solid var(--blue);
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--blue);
+    cursor: pointer;
+    white-space: nowrap;
   }
   .tag:hover {
     background-color: var(--blue-light);
