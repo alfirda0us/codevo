@@ -158,6 +158,33 @@
     font-weight: 700; color: 
     var(--text-primary);
   }
+  .video-section {
+    height: 65vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .video-section .video-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .video-section .video-header h3 {
+    max-width: 500px;
+    color: var(--gray);
+    font-weight: 800; 
+    font-size: 2.5rem; 
+    margin-bottom: 20px;
+  }
+  .video-section .video-header h3 span {
+    color: var(--blue);
+  }
+  .video-section iframe {
+    border-radius: 2rem;
+    border: solid 5px var(--blue);
+  }
   .btn-primary {
     background-color: var(--blue); 
     color: var(--white);
@@ -262,9 +289,7 @@
   }
   .faq-section {
     width: 100%;
-    margin-block: 5rem;
-    height: 50vh;
-    margin: 32px auto 0 auto;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -389,6 +414,7 @@
   }
 
   .footer .footer-list a{
+    max-width: 200px;
     text-decoration: none;
     color: var(--gray);
   }
