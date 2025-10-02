@@ -1,3 +1,15 @@
+// FAQ Accordion interaction
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', function() {
+        const parent = this.parentElement;
+        if (parent.classList.contains('active')) {
+            parent.classList.remove('active');
+        } else {
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            parent.classList.add('active');
+        }
+    });
+});
 // Common JavaScript for all pages
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
