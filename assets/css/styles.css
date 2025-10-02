@@ -6,6 +6,7 @@
     --bg-muted: #F6F8FD;
     --border: #e2e8f0;
     --white: #fff;
+    --gray: #1B1B1C;
     --font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   *{
@@ -174,6 +175,7 @@
     height: 75vh;
   }
   .courses-section h3 {
+    color: var(--gray);
     font-weight: 800; 
     font-size: 2rem; 
     margin-bottom: 20px;
@@ -270,6 +272,7 @@
     gap: 16px;
   }
   .faq-section h3 {
+    color: var(--gray);
     font-weight: 800; 
     font-size: 2rem; 
     margin-bottom: 20px;
@@ -354,9 +357,11 @@
     font-size: var(--smaller-font-size);
     font-weight: var(--font-weight-light);
   }
-
-  .footer i{
-    color: var(--background-color);
+  .footer img{
+    width: 150px;
+  }
+  .footer p{
+    max-width: 300px;
   }
 
   .footer hr{
@@ -383,9 +388,12 @@
     gap: 1rem;
   }
 
-  .footer .footer-list ul li a{
+  .footer .footer-list a{
     text-decoration: none;
-    color: var(--background-color);
+    color: var(--gray);
+  }
+  .footer .footer-list i{
+    color: var(--blue);
   }
 
   .footer .footer-list a:hover{
