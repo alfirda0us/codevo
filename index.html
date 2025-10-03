@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -12,10 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="cursor-circle"></div>
   <div class="container">
     <header>
       <div class="logo">
+        <a href="index.html">
         <img src="assets/src/icon/iconwithtext.svg" alt="logo">
+        </a>
       </div>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex gap-lg-5">
@@ -26,9 +30,8 @@
                  Belajar
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Semua Kelas</a></li>
-                  <li><a class="dropdown-item" href="#">Kelas Populer</a></li>
-                  <li><a class="dropdown-item" href="#">Kelas Gratis</a></li>
+                  <li><a class="dropdown-item" href="classes.html">Semua Kelas</a></li>
+                  <li><a class="dropdown-item" href="#kelas-populer">Kelas Populer</a></li>
                   <li><a class="dropdown-item" href="#">Sertifikat</a></li>
                 </ul>
               </li>
@@ -74,7 +77,9 @@
 
     <main>
       <section class="highlight" aria-label="Highlight kelas">
-        <img src="assets/src/img/hero.svg" alt="hero">
+        <div class="login100-pic js-tilt" data-tilt>
+        <img src="assets/src/img/hero.svg" alt="hero" class="js-tilt" data-tilt>
+        </div>
         <div class="search-input">
           <div class="cari-icon d-flex align-items-center justify-content-center gap-1">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -83,9 +88,7 @@
           <input type="text" placeholder="cari kelasmu disini.." aria-label="Cari kelas" />
         </div>
       </section>
-    </main>
-
-    
+    </main> 
 
     <div class="tags tags-animate" role="list">
       <div class="tags-inner">
@@ -128,18 +131,16 @@
       </div>
     </section>
 
-
-
     <section class="video-section">
       <div class="video-header">
-        <h3>Tidak perlu keluar <span>uang</span> untuk bisa jadi <span>Expert</span></h3>
+        <h3><span>Tidak perlu</span> keluar <span>uang</span> untuk bisa jadi <span>Expert</span></h3>
+        <p class="hero-desc">Belajar gratis, akses materi berkualitas, dan raih skill baru tanpa hambatan biaya. Codevo mendukung semua orang untuk berkembang di dunia digital!</p>
         <a href="classes.html" class="btn-primary text-decoration-none" style="padding: 10px 24px; border-radius: 9999px;">Cari Kelas</a>
       </div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/FnBnQsBIuik?si=fhlIMiVPyC1Uuyw4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
-    
+    </section> 
 
-    <section class="courses-section d-flex flex-column align-items-center justify-content-evenly" aria-label="Pilihan kelas populer">
+    <section class="courses-section d-flex flex-column align-items-center justify-content-evenly" aria-label="Pilihan kelas populer" id="kelas-populer">
       <h3>Pilihan kelas <span>Populer</span>.</h3>
       <div class="course-cards">
         <article class="course-card bg-white" role="group" aria-labelledby="htmlmaster-title">
@@ -164,7 +165,7 @@
           </div>
           <div class="course-actions">
             <span>Gratis</span>
-            <a href="classes.html" class="btn-secondary">Belajar</a>
+            <a href="networking-class-detail.html" class="btn-secondary">Belajar</a>
           </div>
         </article>
 
@@ -185,8 +186,6 @@
         <a href="classes.html" class="btn-primary text-decoration-none" style="padding: 10px 24px; border-radius: 9999px;">Kelas Lainnya</a>
       </div>
     </section>
-
-
 
     <section class="faq-section">
       <h3>FA<span>Q</span>.</h3>
@@ -263,6 +262,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/fb8d0c8468.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

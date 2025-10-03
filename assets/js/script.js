@@ -1,3 +1,26 @@
+// Cursor follower circle - smooth follow
+const cursorCircle = document.querySelector('.cursor-circle');
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let circleX = mouseX;
+let circleY = mouseY;
+
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateCursor() {
+    // Lerp for smoothness
+    circleX += (mouseX - circleX) * 0.18;
+    circleY += (mouseY - circleY) * 0.18;
+    if (cursorCircle) {
+        cursorCircle.style.left = circleX + 'px';
+        cursorCircle.style.top = circleY + 'px';
+    }
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
 // FAQ Accordion interaction
 document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', function() {
@@ -77,3 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initTestimonialSlider();
 });
+
+$('.js-tilt').tilt({
+    scale: 1.1
+})
+
