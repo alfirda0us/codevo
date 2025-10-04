@@ -101,6 +101,46 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialSlider();
 });
 
+// Search bar functionality
+document.querySelector('.search-input input[type="text"]').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const classSections = document.querySelectorAll('.class-section');
+
+    classSections.forEach(section => {
+        const courseCards = section.querySelectorAll('.course-card');
+        let hasVisibleCourse = false;
+
+        courseCards.forEach(card => {
+            const title = card.querySelector('.course-title').textContent.toLowerCase();
+            if (title.includes(query)) {
+                card.style.display = '';
+                hasVisibleCourse = true;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        let noResultMessage = section.querySelector('.no-result');
+        if (!hasVisibleCourse) {
+            if (!noResultMessage) {
+                noResultMessage = document.createElement('p');
+                noResultMessage.classList.add('no-result');
+                noResultMessage.textContent = 'No courses found.';
+                section.appendChild(noResultMessage);
+            }
+        } else if (noResultMessage) {
+            noResultMessage.remove();
+        }
+    });
+});
+
+// Redirect to classes page when search bar is clicked (only on home page)
+if (window.location.pathname.endsWith('index.html')) {
+    document.querySelector('.search-input input[type="text"]').addEventListener('focus', function() {
+        window.location.href = 'classes.html';
+    });
+}
+
 $('.js-tilt').tilt({
     scale: 1.1
 })

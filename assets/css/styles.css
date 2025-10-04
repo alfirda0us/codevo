@@ -7,6 +7,7 @@
   :root {
     --blue: #2E70FF;
     --blue-light: #bfdbfe;
+    --blue-dark: #2563EB;
     --text-primary: #1e293b;
     --text-muted: #475569;
     --bg-muted: #F6F8FD;
@@ -163,6 +164,9 @@
   .tag:hover {
     background-color: var(--blue-light);
   }
+  .tags-inner:hover {
+    animation-play-state: paused;
+  }
   .stats {
     display: flex; 
     justify-content: space-between; 
@@ -201,10 +205,10 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .video-section .video-header h3{
-    font-size: 2rem !important;
+    font-size: 2.1rem !important;
   }
   .video-section iframe {
     border-radius: 2rem;
@@ -227,18 +231,17 @@
     height: 75vh;
   }
   .course-cards {
-    display: flex; 
-    gap: 2.5rem; 
-    flex-wrap: wrap; 
-    justify-content: center;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* Set grid to 3 columns */
+    gap: 2rem; 
     width: 100%;
   }
   .course-card {
     background-color: var(--white);
     border-radius: 15px;
-    max-width: 350px;
+    width: 350px;
     height: 400px;
-    flex: 1 1 220px;
+    /* flex: 1 1 220px; */
     display: flex; 
     flex-direction: column;
     overflow: hidden;
@@ -248,7 +251,7 @@
   }
   .course-card img {
     width: 100%; 
-    height: 120px; 
+    height: 200px; 
     object-fit: cover;
   }
   .course-body {
@@ -295,7 +298,7 @@
     text-decoration: none;
   }
   .btn-secondary:hover {
-    background: var(--text-primary);
+    background-color: var(--blue-dark);
   }
   .btn-secondary.disabled {
     opacity: 0.5; 
@@ -427,7 +430,7 @@
     cursor: pointer;
   }
   .classes-header {
-    height: 25vh;
+    height: 35vh;
     width: 100%;
     padding: 5%;
     display: flex;
@@ -436,22 +439,26 @@
     align-items: center;
     gap: 1rem;
   }
+  .classes-header p {
+    font-size: 1rem !important;
+  }
   .classes-content {
     width: 100%;
-    height: 225vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    margin-bottom: 5rem;
   }
   .classes-content .title {
     margin-bottom: 3rem;
   }
-  .classes-content .course-cards {
-    display: flex;
-    justify-content: start;
-  }
-  .classes-content .course-cards i{
+  .classes-content i{
     color: var(--blue);
+    margin-right: 1rem;
+  }
+  .classes-content .course-card {
+    margin-bottom: 2rem;
   }
   .title-section {
     margin-bottom: 24px;
@@ -728,4 +735,10 @@
   }
   .rating svg.empty {
     fill: var(--border);
+  }
+  .no-result {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
   }

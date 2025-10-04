@@ -14,7 +14,7 @@
 <body>
   <div class="cursor-circle"></div>
   <div class="container">
-    <header>
+    <header class="mt-2">
       <div class="logo">
         <a href="index.html">
         <img src="assets/src/icon/iconwithtext.svg" alt="logo">
@@ -77,19 +77,24 @@
     <section class="classes-header">
       <h3 class="fs-1">Pilihan <span>Kelas</span></h3>
       <p>beberapa pilihan kelas yang bisa kalian akses untuk selamanya</p>
+      <div class="search-input">
+          <div class="cari-icon d-flex align-items-center justify-content-center gap-1">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h6 class="mt-2">Cari</h6>
+          </div>
+          <input type="text" placeholder="cari kelasmu disini.." aria-label="Cari kelas" />
+        </div>
     </section>
 
     <section class="classes-content">
-      <section aria-labelledby="uiux-title">
-      <h3 class="title" id="uiux-title">
-        UI/UX Desain
-      </h3>
+      <section class="class-section" aria-labelledby="pemograman-title">
+      <h3 class="title" id="pemograman-title"><i class="fa-solid fa-code"></i>Pemograman</h3>
       <div class="course-cards">
-        <article class="course-card" role="group" aria-labelledby="uiuxmaster-title">
-          <img src="assets/src/img/course-ui-ux.jpg" alt="UI UX design interface with dark blue background and colorful icons" />
+        <article class="course-card" role="group" aria-labelledby="html-title">
+          <img src="assets/src/img/course-html.jpg" alt="UI UX design interface with dark blue background and colorful icons" />
           <div class="course-body">
             <div class="course-tag">Umum</div>
-            <h4 id="uiuxmaster-title" class="course-title">UI/UX Master</h4>
+            <h4 id="uiuxmaster-title" class="course-title">HTML Dasar</h4>
             <div class="course-info">15 Jam | 10 Video</div>
           </div>
           <div class="course-actions">
@@ -98,11 +103,11 @@
           </div>
         </article>
 
-        <article class="course-card" role="group" aria-labelledby="fluttermaster-title">
-          <img src="" alt="Colorful code snippet flutter with dark theme background" />
+        <article class="course-card" role="group" aria-labelledby="css-title">
+          <img src="assets/src/img/course-css.png" alt="Colorful code snippet flutter with dark theme background" />
           <div class="course-body">
             <div class="course-tag">Umum</div>
-            <h4 id="fluttermaster-title" class="course-title">Flutter Master</h4>
+            <h4 id="fluttermaster-title" class="course-title">CSS Dasar</h4>
             <div class="course-info">23 Jam | 25 Video</div>
           </div>
           <div class="course-actions">
@@ -111,11 +116,11 @@
           </div>
         </article>
 
-        <article class="course-card" role="group" aria-labelledby="networkingmaster-title">
-          <img src="assets/src/img/course-networking.jpg" alt="Network server racks with cables in datacenter" />
+        <article class="course-card" role="group" aria-labelledby="flutter-title">
+          <img src="assets/src/img/course-flutter.png" alt="Network server racks with cables in datacenter" />
           <div class="course-body">
             <div class="course-tag">Umum</div>
-            <h4 id="networkingmaster-title" class="course-title">Networking Master</h4>
+            <h4 id="networkingmaster-title" class="course-title">Flutter Dasar</h4>
             <div class="course-info">17 Jam | 15 Video</div>
           </div>
           <div class="course-actions">
@@ -126,51 +131,7 @@
       </div>
       </section>
 
-      <section aria-labelledby="networking-title title">
-      <h3 class="title" id="networking-title">Networking</h3>
-      <div class="course-cards">
-        <article class="course-card" role="group" aria-labelledby="networkingmaster2-title">
-          <img src="assets/src/img/course-networking.jpg" alt="Network server racks with cables in datacenter" />
-          <div class="course-body">
-            <div class="course-tag">Umum</div>
-            <h4 id="networkingmaster2-title" class="course-title">Networking Master</h4>
-            <div class="course-info">17 Jam | 15 Video</div>
-          </div>
-          <div class="course-actions">
-            <span>Gratis</span>
-            <a href="class-details.html" class="btn-secondary">Belajar</a>
-          </div>
-        </article>
-
-        <article class="course-card" role="group" aria-labelledby="uiuxmaster2-title">
-          <img src="assets/src/img/course-ui-ux.jpg" alt="UI UX design interface with dark blue background and colorful icons" />
-          <div class="course-body">
-            <div class="course-tag">Umum</div>
-            <h4 id="uiuxmaster2-title" class="course-title">UI/UX Master</h4>
-            <div class="course-info">15 Jam | 10 Video</div>
-          </div>
-          <div class="course-actions">
-            <span>Gratis</span>
-            <a href="class-details.html" class="btn-secondary">Belajar</a>
-          </div>
-        </article>
-
-        <article class="course-card" role="group" aria-labelledby="fluttermaster2-title">
-          <img src="" alt="Colorful code snippet flutter with dark theme background" />
-          <div class="course-body">
-            <div class="course-tag">Umum</div>
-            <h4 id="fluttermaster2-title" class="course-title">Flutter Master</h4>
-            <div class="course-info">23 Jam | 25 Video</div>
-          </div>
-          <div class="course-actions">
-            <span>Gratis</span>
-            <a href="class-details.html" class="btn-secondary">Belajar</a>
-          </div>
-        </article>
-      </div>
-      </section>
-
-      <section aria-labelledby="appdeveloper-title title">
+      <section class="class-section" aria-labelledby="appdeveloper-title">
       <h3 class="title" id="appdeveloper-title"><i class="fa-solid fa-mobile mt-1"></i>App Developer</h3>
       <div class="course-cards">
         <article class="course-card" role="group" aria-labelledby="fluttermaster3-title">
@@ -192,6 +153,76 @@
             <div class="course-tag">Umum</div>
             <h4 id="uiuxmaster3-title" class="course-title">UI/UX Master</h4>
             <div class="course-info">15 Jam | 10 Video</div>
+          </div>
+          <div class="course-actions">
+            <span>Gratis</span>
+            <a href="class-details.html" class="btn-secondary">Belajar</a>
+          </div>
+        </article>
+      </div>
+      </section>
+
+      <section class="class-section" aria-labelledby="others-title">
+      <h3 class="title" id="others-title"><i class="fa-solid fa-window-restore"></i>All Courses</h3>
+      <div class="course-cards">
+        <article class="course-card" role="group" aria-labelledby="html-title">
+          <img src="assets/src/img/course-html.jpg" alt="UI UX design interface with dark blue background and colorful icons" />
+          <div class="course-body">
+            <div class="course-tag">Umum</div>
+            <h4 id="uiuxmaster-title" class="course-title">HTML Dasar</h4>
+            <div class="course-info">15 Jam | 10 Video</div>
+          </div>
+          <div class="course-actions">
+            <span>Gratis</span>
+            <a href="class-details.html" class="btn-secondary">Belajar</a>
+          </div>
+        </article>
+
+        <article class="course-card" role="group" aria-labelledby="css-title">
+          <img src="assets/src/img/course-css.png" alt="Colorful code snippet flutter with dark theme background" />
+          <div class="course-body">
+            <div class="course-tag">Umum</div>
+            <h4 id="fluttermaster-title" class="course-title">CSS Dasar</h4>
+            <div class="course-info">23 Jam | 25 Video</div>
+          </div>
+          <div class="course-actions">
+            <span>Gratis</span>
+            <a href="class-details.html" class="btn-secondary">Belajar</a>
+          </div>
+        </article>
+
+        <article class="course-card" role="group" aria-labelledby="flutter-title">
+          <img src="assets/src/img/course-flutter.png" alt="Colorful code snippet flutter with dark theme background" />
+          <div class="course-body">
+            <div class="course-tag">Umum</div>
+            <h4 id="fluttermaster2-title" class="course-title">Flutter Master</h4>
+            <div class="course-info">23 Jam | 25 Video</div>
+          </div>
+          <div class="course-actions">
+            <span>Gratis</span>
+            <a href="class-details.html" class="btn-secondary">Belajar</a>
+          </div>
+        </article>
+        
+        <article class="course-card" role="group" aria-labelledby="uiux-title">
+          <img src="assets/src/img/course-ui-ux.jpg" alt="UI UX design interface with dark blue background and colorful icons" />
+          <div class="course-body">
+            <div class="course-tag">Umum</div>
+            <h4 id="uiuxmaster2-title" class="course-title">UI/UX Master</h4>
+            <div class="course-info">15 Jam | 10 Video</div>
+          </div>
+          <div class="course-actions">
+            <span>Gratis</span>
+            <a href="class-details.html" class="btn-secondary">Belajar</a>
+          </div>
+        </article>
+
+        <article class="course-card" role="group" aria-labelledby="networking-title">
+          <img src="assets/src/img/course-networking.jpg" alt="Network server racks with cables in datacenter" />
+          <div class="course-body">
+            <div class="course-tag">Umum</div>
+            <h4 id="networkingmaster2-title" class="course-title">Networking Master</h4>
+            <div class="course-info">17 Jam | 15 Video</div>
           </div>
           <div class="course-actions">
             <span>Gratis</span>
