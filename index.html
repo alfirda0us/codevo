@@ -1,4 +1,3 @@
-</html>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,6 +14,12 @@
 <body>
   <div class="cursor-circle"></div>
   <div class="container">
+    
+    <div id="welcome-banner" class="welcome-banner">
+      <p class="mb-0"><strong>Codevo</strong>    –    Wadah Belajar Digital, Mencetak Talenta Masa Depan Indonesia</p>
+      <i class="fa-solid fa-xmark " id="close-banner"></i>
+    </div>
+
     <header class="mt-2">
       <div class="logo">
         <a href="index.html">
@@ -78,7 +83,7 @@
     <main>
       <section class="highlight" aria-label="Highlight kelas">
         <div class="login100-pic js-tilt" data-tilt>
-        <img src="assets/src/img/banner-hero.svg" alt="hero" class="js-tilt" data-tilt>
+        <img src="assets/src/img/banner-hero.svg" alt="hero" data-tilt data-tilt-glare class="tilt-effect">
         </div>
         <div class="search-input" id="search-input">
           <div class="cari-icon d-flex align-items-center justify-content-center gap-1">
@@ -183,11 +188,11 @@
         </article>
       </div>
       <div style="text-align:center; margin-top: 24px;">
-        <a href="" class="btn-primary text-decoration-none" style="padding: 10px 24px; border-radius: 9999px;">Kelas Lainnya</a>
+        <a href="classes.html" class="btn-primary text-decoration-none" style="padding: 10px 24px; border-radius: 9999px;">Kelas Lainnya</a>
       </div>
     </section>
 
-    <section class="faq-section">
+      <section class="faq-section">
       <h3>FA<span>Q</span>.</h3>
     <div class="faq-item">
       <div class="faq-question">
@@ -219,7 +224,7 @@
         kelas dari kami completly free tidak dipungut biaya sedikitpun. Kami mendukung pendidikan indonesia lebih maju hahah awokawok
       </div>
     </div>
-  </section>
+    </section>
 
       <section class="footer d-flex flex-column align-items-start justify-content-around text-start gap-4 pt-2">
         <div class="footer-top">
@@ -263,5 +268,6 @@
   <script src="https://kit.fontawesome.com/fb8d0c8468.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/vanilla-tilt.js"></script>
 </body>
 </html>

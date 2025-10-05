@@ -99,6 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     initTestimonialSlider();
+
+    // Banner functionality
+    const banner = document.getElementById('welcome-banner');
+    const closeButton = document.getElementById('close-banner');
+
+    // Show the banner when the page loads
+    if (banner) {
+        banner.classList.add('show-banner');
+    }
+
+    // Close the banner when the button is clicked
+    if (closeButton) {
+        closeButton.addEventListener('click', function () {
+            if (banner) {
+                banner.style.display = 'none';
+            }
+        });
+    }
 });
 
 // Search bar functionality
