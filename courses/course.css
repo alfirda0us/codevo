@@ -1,0 +1,205 @@
+  main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  main .left {
+    width: 70%;
+    height: 100%;
+  }
+  main .right {
+    width: 30%;
+    height: 100%;
+  }
+  .title-section {
+    margin-block: 24px;
+  }
+  .title-section small {
+    font-size: 0.875rem;
+    color: var(--text-muted-alt);
+    display: inline-flex;
+    gap: 1rem;
+    margin-top: 4px;
+    margin-right: 0.5rem;
+    user-select: none;
+  }
+  .title-section small p {
+    display: flex;
+    gap: 1rem;
+  }
+  .title-section h1{
+    font-weight: 700;
+  }
+  .main-grid {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .main-grid img{
+    width: 100%;
+    height: 400px;
+    background-color: var(--text-primary);
+    border-radius: 15px;
+  }
+  .course-summary-box {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+    user-select: none;
+  }
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+  }
+  .summary-item svg {
+    fill: var(--blue);
+    width: 28px; height: 28px;
+    margin-bottom: 6px;
+  }
+  .summary-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .summary-value {
+    font-weight: 700;
+    font-size: 1.22rem;
+    color: var(--blue);
+  }
+  .lesson-list-box {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+  }
+  .lesson-list-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-block: 12px;
+  }
+  .lesson-list {
+    list-style-type: none;
+    padding-left: 0;
+    max-height: 170px;
+    overflow-y: auto;
+  }
+  .lesson-list::-webkit-scrollbar {
+    display: none;
+  }
+  .lesson-list li {
+    border: 1.3px solid var(--blue);
+    color: var(--blue);
+    border-radius: 30px;
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: default;
+  }
+  .lesson-list li span.duration {
+    font-weight: 400;
+    color: var(--text-muted-alt);
+    margin-left: 15px;
+  }
+
+  .enroll-box {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 16px 20px;
+    user-select: none;
+  }
+  .enroll-box .price {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--text-muted-alt);
+  }
+  .enroll-box button {
+    width: 100%;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .enroll-box button:hover {
+    background-color: #2563eb;
+  }
+
+  .tabs {
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px;
+    user-select: none;
+  }
+  .tab {
+    border: 1.5px solid var(--blue);
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--white);
+    cursor: pointer;
+    user-select: none;
+  }
+  .tab[aria-selected="true"] {
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: default;
+  }
+
+  .tab-panel {
+    display: none;
+  }
+  .tab-panel p{
+    text-align: justify;
+  }
+  .tab-panel[aria-hidden="false"] {
+    display: block;
+  }
+
+  .tools-list {
+    display: flex; gap: 16px;
+  }
+  .tool-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 12px 15px;
+    max-width: 200px;
+    display: flex; 
+    align-items: center; 
+    gap: 12px;
+  }
+  .tool-card img {
+    width: 48px; height: 48px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .tool-info {
+    flex-grow: 1;
+  }
+  .tool-title {
+    font-weight: 700; 
+    font-size: 1rem; 
+    margin-bottom: 0;
+  }
+  .tool-subtitle {
+    font-size: 0.8rem; 
+    color: var(--text-muted-alt);
+  }

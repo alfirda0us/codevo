@@ -21,6 +21,7 @@ function animateCursor() {
     requestAnimationFrame(animateCursor);
 }
 animateCursor();
+
 // FAQ Accordion interaction
 document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', function() {
@@ -33,6 +34,7 @@ document.querySelectorAll('.faq-question').forEach(q => {
         }
     });
 });
+
 // Common JavaScript for all pages
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
@@ -117,6 +119,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Tools and Review Panel functionality
+    const toolsButton = document.getElementById('tools-button');
+    const reviewPanelButton = document.getElementById('review-panel-button');
+    const toolsPanel = document.getElementById('tools-panel');
+    const reviewPanel = document.getElementById('review-panel');
+
+    if (toolsButton && reviewPanelButton && toolsPanel && reviewPanel) {
+        toolsButton.addEventListener('click', function () {
+            toolsPanel.classList.toggle('visible');
+            reviewPanel.classList.remove('visible'); // Hide Review Panel if open
+        });
+
+        reviewPanelButton.addEventListener('click', function () {
+            reviewPanel.classList.toggle('visible');
+            toolsPanel.classList.remove('visible'); // Hide Tools Panel if open
+        });
+    }
 });
 
 // Search bar functionality
@@ -161,5 +181,4 @@ if (window.location.pathname.endsWith('index.html')) {
 
 $('.js-tilt').tilt({
     scale: 1.1
-})
-
+});
