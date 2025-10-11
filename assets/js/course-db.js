@@ -1,7 +1,7 @@
 // course-database.js
 class CourseDatabase {
     constructor(sheetId, apiKey) {
-        this.db = new GoogleSheetsDB(sheetId, apiKey);
+        this.db = new GoogleSheetsDB(sheetId || CONFIG.SHEET_ID, apiKey || CONFIG.API_KEY);
     }
 
     // COURSES OPERATIONS
