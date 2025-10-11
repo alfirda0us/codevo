@@ -23,7 +23,7 @@
     <header class="mt-2">
       <div class="logo">
         <a href="index.html">
-        <img src="assets/src/icon/iconwithtext.svg" alt="logo">
+        <img src="assets/src/icon/iconwithtext.svg" alt="logo" tilt-disabled>
         </a>
       </div>
       <nav class="navbar navbar-expand-lg">
@@ -62,19 +62,11 @@
                   <li><a class="dropdown-item" href="#">Pengunguman</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 ID
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">EN</a></li>
-                </ul>
-              </li>
             </ul>
           </div>
           <div class="nav-icon d-flex gap-lg-3">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-circle-user"></i>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>    
+            <a href=""><i class="fa-solid fa-circle-user"></i></a>    
           </div>
         </div>
       </nav>
@@ -82,8 +74,8 @@
 
     <main>
       <section class="highlight" aria-label="Highlight kelas">
-        <div class="login100-pic js-tilt" data-tilt>
-        <img src="assets/src/img/banner-hero.svg" alt="hero" data-tilt data-tilt-glare class="tilt-effect">
+        <div class="login100-pic js-tilt">
+        <img src="assets/src/img/banner-hero.svg" alt="hero" data-tilt-glare class="tilt-effect">
         </div>
         <div class="search-input" id="search-input">
           <div class="cari-icon d-flex align-items-center justify-content-center gap-1">
@@ -149,7 +141,7 @@
       <h3>Pilihan kelas <span>Populer</span>.</h3>
       <div class="course-cards">
         <article class="course-card bg-white" role="group" aria-labelledby="html-title">
-          <img src="assets/src/img/course-html.jpg" alt="Black background with colorful HTML code snippet" />
+          <img src="assets/src/img/course-html.jpg" tilt-disabled>
           <div class="course-body">
             <div class="course-tag">Umum</div>
             <h4 id="htmlmaster-title" class="course-title">HTML Dasar</h4>
@@ -162,7 +154,7 @@
         </article>
 
         <article class="course-card" role="group" aria-labelledby="networking-title">
-          <img src="assets/src/img/course-networking.jpg" />
+          <img src="assets/src/img/course-networking.jpg" tilt-disabled>
           <div class="course-body">
             <div class="course-tag">Umum</div>
             <h4 id="networkingmaster-title" class="course-title">Networking Dasar</h4>
@@ -175,7 +167,7 @@
         </article>
 
         <article class="course-card" role="group" aria-labelledby="uiux-title">
-          <img src="assets/src/img/course-ui-ux.jpg" />
+          <img src="assets/src/img/course-ui-ux.jpg " tilt-disabled>
           <div class="course-body">
             <div class="course-tag">Umum</div>
             <h4 id="uiuxmaster-title" class="course-title">UI/UX Dasar</h4>
@@ -226,7 +218,7 @@
     </div>
     </section>
 
-      <section class="footer d-flex flex-column align-items-start justify-content-around text-start gap-4 pt-2">
+    <section class="footer d-flex flex-column align-items-start justify-content-around text-start gap-4 pt-2">
         <div class="footer-top">
             <div class="logo d-flex flex-column justify-content-center gap-2 pt-4">
                <img src="assets/src/icon/iconwithtext.svg" alt="logo">
@@ -269,5 +261,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/vanilla-tilt.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

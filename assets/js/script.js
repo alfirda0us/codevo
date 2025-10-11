@@ -182,3 +182,107 @@ if (window.location.pathname.endsWith('index.html')) {
 $('.js-tilt').tilt({
     scale: 1.1
 });
+
+
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('https://script.google.com/macros/s/AKfycbyL0IXtaW8b742JlKOb-VRFvIzF6bSkamTS5AVMKCYx2BCNVWGADkTtdY6c4WvF5jXeaQ/exec', {
+        method: 'POST',
+        body: new URLSearchParams({
+          action: 'login',
+          username: username,
+          password: password
+        })
+      })
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('loginMessage').textContent = data;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+
+    // assets/js/script.js
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Homepage loaded');
+    
+    // Load featured courses
+    loadFeaturedCourses();
+    
+    // Setup navigation
+    setupNavigation();
+    
+    // Setup animations
+    setupAnimations();
+});
+
+async function loadFeaturedCourses() {
+    try {
+        if (!window.GoogleSheetsDB) {
+            console.log('GoogleSheetsDB not loaded on homepage');
+            return;
+        }
+        
+        const db = new GoogleSheetsDB();
+        const courses = await db.readSheet('Courses');
+        
+        // Show only active courses
+        const featuredCourses = courses.filter(course => course.is_active === 'TRUE').slice(0, 3);
+        
+        displayFeaturedCourses(featuredCourses);
+    } catch (error) {
+        console.log('Could not load courses:', error.message);
+    }
+}
+
+function displayFeaturedCourses(courses) {
+    const container = document.querySelector('.courses-grid');
+    if (!container) return;
+    
+    container.innerHTML = courses.map(course => `
+        <div class="course-card">
+            <div class="course-image">${course.title}</div>
+            <div class="course-content">
+                <span class="course-category">${course.category}</span>
+                <h3 class="course-title">${course.title}</h3>
+                <div class="course-meta">
+                    <span>${course.level}</span>
+                    <span>${course.duration} Hours</span>
+                </div>
+                <a href="pages/courses/course-detail.html?id=${course.id}" class="btn">Lihat Kelas</a>
+            </div>
+        </div>
+    `).join('');
+}
+
+function setupNavigation() {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+function setupAnimations() {
+    // Add hover effects to course cards
+    const courseCards = document.querySelectorAll('.course-card');
+    courseCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+}

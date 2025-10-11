@@ -493,7 +493,10 @@ if (typeof document !== "undefined") {
   /**
    * Auto load
    */
-  VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+  VanillaTilt.init(document.querySelectorAll("[tilt-disabled]"), {
+    max: 0, // Set maximum tilt angle to 0
+    glare: false // Disable glare effect
+  });
   VanillaTilt.init(document.querySelectorAll("img"), {
     max: 15, // Maximum tilt angle
     speed: 400, // Speed of the transition
