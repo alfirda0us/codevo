@@ -22,6 +22,33 @@ function animateCursor() {
 }
 animateCursor();
 
+
+    // Check login status and update UI
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser && currentUser.loggedIn) {
+      const welcomeText = document.getElementById('welcome-text');
+      welcomeText.innerHTML = `Welcome, ${currentUser.username || currentUser.name}`;
+      welcomeText.style.display = 'block';
+
+      const userIcon = document.querySelector('.nav-icon a:last-child');
+      userIcon.href = '#';
+      userIcon.onclick = (e) => {
+        e.preventDefault();
+        if (confirm('Do you want to Logout?')) {
+          logout();
+        }
+      };
+    }
+
+    function logout() {
+      localStorage.removeItem('currentUser');
+      const welcomeText = document.getElementById('welcome-text');
+      welcomeText.style.display = 'none';
+      window.location.reload();
+    }
+
+
+
 // FAQ Accordion interaction
 document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', function() {
@@ -106,6 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const banner = document.getElementById('welcome-banner');
     const closeButton = document.getElementById('close-banner');
 
+    
+    if (localStorage.getItem('closeBanner')) {
+        banner.style.display = 'none';
+    }
+
     // Show the banner when the page loads
     if (banner) {
         banner.classList.add('show-banner');
@@ -114,9 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close the banner when the button is clicked
     if (closeButton) {
         closeButton.addEventListener('click', function () {
-            if (banner) {
-                banner.style.display = 'none';
-            }
+            localStorage.setItem('closeBanner', true)
         });
     }
 
@@ -182,30 +212,7 @@ if (window.location.pathname.endsWith('index.html')) {
 $('.js-tilt').tilt({
     scale: 1.1
 });
-
-
-    document.getElementById('loginForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-
-      fetch('https://script.google.com/macros/s/AKfycbyL0IXtaW8b742JlKOb-VRFvIzF6bSkamTS5AVMKCYx2BCNVWGADkTtdY6c4WvF5jXeaQ/exec', {
-        method: 'POST',
-        body: new URLSearchParams({
-          action: 'login',
-          username: username,
-          password: password
-        })
-      })
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('loginMessage').textContent = data;
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    });
+    
 
     // assets/js/script.js
 document.addEventListener('DOMContentLoaded', function() {
@@ -273,16 +280,3 @@ function setupNavigation() {
     });
 }
 
-function setupAnimations() {
-    // Add hover effects to course cards
-    const courseCards = document.querySelectorAll('.course-card');
-    courseCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-}

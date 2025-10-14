@@ -1,4 +1,3 @@
-// assets/js/login.js
 const courseDB = new CourseDatabase();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,6 +59,7 @@ async function handleSignup(e) {
     e.preventDefault();
 
     const name = document.querySelector('#name').value;
+    const username = document.querySelector('#username').value;
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     const phone = document.querySelector('#phone').value;

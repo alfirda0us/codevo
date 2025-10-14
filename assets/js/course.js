@@ -114,6 +114,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Review rating interaction
+    const ratingStars = document.querySelectorAll('.rating svg');
+    ratingStars.forEach(star => {
+        star.addEventListener('click', function() {
+            const ratingContainer = this.closest('.rating');
+            const stars = ratingContainer.querySelectorAll('svg');
+            const clickedIndex = Array.from(stars).indexOf(this);
+            
+            // Update stars visual state
+            stars.forEach((s, index) => {
+                if (index <= clickedIndex) {
+                    s.classList.add('filled');
+                    s.classList.remove('empty');
+                } else {
+                    s.classList.add('empty');
+                    s.classList.remove('filled');
+                }
+            });
+            
+            // In a real app, you would submit the rating here
+            console.log(`Rating submitted: ${clickedIndex + 1} stars`);
+        });
+    });
+    
     // Check if user is already enrolled
     function checkEnrollmentStatus() {
         const courseTitle = document.getElementById('class-title').textContent;
@@ -122,8 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (enrollments[courseTitle] && enrollButton) {
             enrollButton.textContent = 'Sudah Terdaftar';
             enrollButton.style.backgroundColor = '#2563EB';
-            enrollButton.style.cursor = 'default';
-            enrollButton.disabled = true;
+            enrollButton.addEventListener('click', function() {
+                window.location.href = 'open-class.html';
+            }) 
         }
     }
     
