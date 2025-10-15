@@ -22,33 +22,6 @@ function animateCursor() {
 }
 animateCursor();
 
-
-    // Check login status and update UI
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser && currentUser.loggedIn) {
-      const welcomeText = document.getElementById('welcome-text');
-      welcomeText.innerHTML = `Welcome, ${currentUser.username || currentUser.name}`;
-      welcomeText.style.display = 'block';
-
-      const userIcon = document.querySelector('.nav-icon a:last-child');
-      userIcon.href = '#';
-      userIcon.onclick = (e) => {
-        e.preventDefault();
-        if (confirm('Do you want to Logout?')) {
-          logout();
-        }
-      };
-    }
-
-    function logout() {
-      localStorage.removeItem('currentUser');
-      const welcomeText = document.getElementById('welcome-text');
-      welcomeText.style.display = 'none';
-      window.location.reload();
-    }
-
-
-
 // FAQ Accordion interaction
 document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', function() {
@@ -212,71 +185,3 @@ if (window.location.pathname.endsWith('index.html')) {
 $('.js-tilt').tilt({
     scale: 1.1
 });
-    
-
-    // assets/js/script.js
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Homepage loaded');
-    
-    // Load featured courses
-    loadFeaturedCourses();
-    
-    // Setup navigation
-    setupNavigation();
-    
-    // Setup animations
-    setupAnimations();
-});
-
-async function loadFeaturedCourses() {
-    try {
-        if (!window.GoogleSheetsDB) {
-            console.log('GoogleSheetsDB not loaded on homepage');
-            return;
-        }
-        
-        const db = new GoogleSheetsDB();
-        const courses = await db.readSheet('Courses');
-        
-        // Show only active courses
-        const featuredCourses = courses.filter(course => course.is_active === 'TRUE').slice(0, 3);
-        
-        displayFeaturedCourses(featuredCourses);
-    } catch (error) {
-        console.log('Could not load courses:', error.message);
-    }
-}
-
-function displayFeaturedCourses(courses) {
-    const container = document.querySelector('.courses-grid');
-    if (!container) return;
-    
-    container.innerHTML = courses.map(course => `
-        <div class="course-card">
-            <div class="course-image">${course.title}</div>
-            <div class="course-content">
-                <span class="course-category">${course.category}</span>
-                <h3 class="course-title">${course.title}</h3>
-                <div class="course-meta">
-                    <span>${course.level}</span>
-                    <span>${course.duration} Hours</span>
-                </div>
-                <a href="pages/courses/course-detail.html?id=${course.id}" class="btn">Lihat Kelas</a>
-            </div>
-        </div>
-    `).join('');
-}
-
-function setupNavigation() {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-}
-

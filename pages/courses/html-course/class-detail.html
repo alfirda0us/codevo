@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codevo - Kelas HTML Dasar</title>
+<title>Kelas HTML Dasar</title>
 <link rel="stylesheet" href="../../../assets/css/styles.css">
 <link rel="stylesheet" href="../../../assets/css/course.css">
 <link rel="icon" type="svg" href="../../../assets/src/icon/icon.svg">
@@ -115,24 +115,26 @@
     </nav>
 
     <section id="panel-about" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-about" aria-hidden="false">
-      <p>Kelas online Networking Master: Membangun Jaringan Komputer dari Dasar hingga Mahir hadir sebagai solusi bagi Anda yang ingin menguasai konsep dan implementasi jaringan komputer yang modern. Dalam kelas ini, Anda tidak hanya akan belajar teori dasar jaringan, tetapi juga akan diajarkan bagaimana cara mengkonfigurasi perangkat jaringan seperti router dan switch, serta memahami protokol jaringan seperti TCP/IP.</p>
+      <p>Kelas HTML Dasar dirancang untuk membantu kamu memahami bagaimana sebuah website dibangun dari awal menggunakan HTML (HyperText Markup Language). Di sini, kamu akan mempelajari cara membuat struktur halaman web, mengenal berbagai elemen penting seperti teks, gambar, tautan, tabel, hingga formulir sederhana.</p>
 
-      <p>Kelas ini dirancang untuk memberikan pemahaman mendalam mengenai konsep-konsep dasar jaringan hingga implementasi fitur-fitur canggih seperti pengaturan VLAN, routing dinamis, dan keamanan jaringan. Anda akan mendapatkan pengalaman dalam mengelola jaringan skala kecil hingga besar dengan menggunakan perangkat lunak seperti WinBox dan RouterOS.</p>
+      <p>Dalam kelas ini, kamu tidak hanya belajar teori, tetapi juga langsung mempraktikkan bagaimana menulis kode HTML dengan benar dan terstruktur. Setiap materi disusun dengan langkah-langkah yang mudah diikuti, bahkan untuk pemula yang belum pernah belajar pemrograman sebelumnya.</p>
 
-      <p>Selama mengikuti kelas ini, Anda juga akan mempelajari cara memonitor jaringan menggunakan tools seperti Wireshark, serta memahami cara mengoptimalkan kinerja jaringan. Tak hanya itu, pembelajaran tentang cara mengatasi masalah jaringan secara efektif akan menambah kemampuan Anda sebagai seorang profesional di bidang jaringan.</p>
+      <p>Selain itu, kamu juga akan memahami bagaimana browser membaca kode HTML dan menampilkannya menjadi halaman web yang kamu lihat setiap hari. Pengetahuan ini menjadi dasar penting sebelum kamu melangkah ke tahap selanjutnya seperti CSS dan JavaScript.</p>
+
+      <p>Dengan menyelesaikan kelas ini, kamu akan mampu membuat halaman web sederhana secara mandiri, memahami istilah-istilah dasar dalam dunia web development, serta siap untuk melanjutkan ke pembelajaran desain dan interaktivitas website yang lebih kompleks.</p>
     </section>
 
     <section id="panel-tools" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-tools" aria-hidden="true">
       <div class="tools-list">
         <article class="tool-card">
-          <img src="https://placeholder-image-service.onrender.com/image/48x48?prompt=VS Code editor icon in blue shades on white background&id=vs-code-icon" alt="VS Code editor icon in blue shades on white background" />
+          <img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxj7kCzMIlSC20SNjaJf9GmG15ocnF.zbBRgxMSlB7Ejh6FbgNzxLvZOoW7N3ML56fn3m5Z4MO.M8pYrCFVKIhqM-&format=source"/>
           <div class="tool-info">
             <h4 class="tool-title">Visual Studio Code</h4>
             <p class="tool-subtitle">Editor Kode Gratis</p>
           </div>
         </article>
         <article class="tool-card">
-          <img src="https://placeholder-image-service.onrender.com/image/48x48?prompt=Browser web icon with modern design&id=browser-icon" alt="Browser web icon with modern design" />
+          <img src="https://evolvemedia.com/wp-content/uploads/2022/06/browser-brands-e1656446086941-1.png" alt="Browser web icon with modern design" />
           <div class="tool-info">
             <h4 class="tool-title">Web Browser</h4>
             <p class="tool-subtitle">Chrome, Firefox, Edge</p>
@@ -147,11 +149,12 @@
         <section class="lesson-list-box" aria-labelledby="lessons-title">
           <h2 class="lesson-list-title" id="lessons-title">12 Lessons (5,3 Hours)</h2>
           <ul class="lesson-list">
+            <li>Pembukaan <span class="duration">1 Menit</span></li>
             <li>Pengenalan Basic HTML <span class="duration">8 Menit</span></li>
             <li>Apa itu Element HTML? <span class="duration">4 Menit</span></li>
             <li>Atribut-atribut HTML <span class="duration">8 Menit</span></li>
-            <li>Penutupan Kelas HTML<span class="duration">4 Menit</span></li>
             <li>Kesimpulan<span class="duration">3 Menit</span></li>
+            <li>Penutupan<span class="duration">4 Menit</span></li>
           </ul>
         </section>
 
@@ -205,5 +208,24 @@
   <script src="https://kit.fontawesome.com/fb8d0c8468.js" crossorigin="anonymous"></script>
   <script src="../../../assets/js/script.js"></script>
   <script src="../../../assets/js/course.js"></script>
+  <script>
+    // Check if user is logged in before allowing access to class
+    document.addEventListener('DOMContentLoaded', function() {
+      const enrollButton = document.querySelector('.enroll-box button');
+      if (enrollButton) {
+        enrollButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          const currentUser = localStorage.getItem('currentUser');
+          if (!currentUser) {
+            // User not logged in, redirect to signup
+            window.location.href = '../../../pages/signup/signup.html';
+          } else {
+            // User is logged in, proceed to class
+            window.location.href = 'open-class.html';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

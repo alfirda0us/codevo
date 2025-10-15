@@ -22,7 +22,21 @@
 
         let currentLessonNum = progressData.currentLesson;
 
+        function saveProgressToLocalStorage() {
+            localStorage.setItem('htmlCourseProgress', JSON.stringify(progressData));
+        }
+
+        function loadProgressFromLocalStorage() {
+            const saved = localStorage.getItem('htmlCourseProgress');
+            if (saved) {
+                const savedData = JSON.parse(saved);
+                Object.assign(progressData, savedData);
+            }
+        }
+
         function initializeLearningPage() {
+            loadProgressFromLocalStorage();
+            currentLessonNum = progressData.currentLesson;
             updateCurrentLessonContent(currentLessonNum);
             updateLessonSidebar();
             updateProgressBar(progressData.progressPercentage);
@@ -37,18 +51,21 @@
             });
 
             document.getElementById('mark-complete').addEventListener('click', markLessonComplete);
+            document.getElementById('confirm-complete').addEventListener('click', confirmCourseComplete);
         }
 
         function selectLesson(lessonNumber) {
             if (lessonNumber < 1 || lessonNumber > progressData.totalLessons) return;
-            
+
             currentLessonNum = lessonNumber;
             progressData.currentLesson = lessonNumber;
-            
+
             updateCurrentLessonContent(lessonNumber);
             updateLessonSidebar();
-            
+
             document.querySelector('.main-content').scrollTo(0, 0);
+
+            saveProgressToLocalStorage();
         }
 
         function updateCurrentLessonContent(lessonNumber) {
@@ -106,15 +123,21 @@
                 if (!lessonData) return;
 
                 const icon = item.querySelector('i');
+                const lessonTitle = item.querySelector('.lesson-title');
+                const lessonTime = item.querySelector('.lesson-time');
 
                 item.classList.remove('active');
 
                 if (lessonData.completed) {
                     icon.className = 'fas fa-check-circle completed';
                     item.classList.add('completed');
+                    if (lessonTitle) lessonTitle.classList.add('completed');
+                    if (lessonTime) lessonTime.classList.add('completed');
                 } else {
                     icon.className = 'far fa-play-circle';
                     icon.style.color = '#6c757d';
+                    if (lessonTitle) lessonTitle.classList.remove('completed');
+                    if (lessonTime) lessonTime.classList.remove('completed');
                 }
 
                 if (lessonNumber === currentLessonNum) {
@@ -126,7 +149,7 @@
 
         function markLessonComplete() {
             const lessonData = progressData.lessons[currentLessonNum];
-            
+
             if (lessonData.completed) {
                 showNotification('Lesson already completed!', 'info');
                 return;
@@ -134,46 +157,59 @@
 
             lessonData.completed = true;
             progressData.completedLessons += 1;
-            
+
             const newPercentage = Math.round((progressData.completedLessons / progressData.totalLessons) * 100);
             progressData.progressPercentage = Math.min(newPercentage, 100);
-            
+
             updateCurrentLessonContent(currentLessonNum);
             updateLessonSidebar();
             updateProgressBar(progressData.progressPercentage);
-            
+
+            saveProgressToLocalStorage();
+
             showNotification('Lesson marked as complete!', 'success');
-            
-            setTimeout(() => {
-                if (currentLessonNum < progressData.totalLessons) {
-                    selectLesson(currentLessonNum + 1);
-                } else {
+
+            if (currentLessonNum === progressData.totalLessons) {
+                setTimeout(() => {
                     showNotification('Congratulations! Course completed!', 'success');
-                }
-            }, 2000);
+                }, 2000);
+            }
         }
 
         function updateProgressBar(progress) {
             document.querySelector('.progress-fill').style.width = `${progress}%`;
             document.querySelector('.progress-percent').textContent = `${progress}%`;
+
+            // Show confirm complete button when progress is 100%
+            const confirmBtn = document.getElementById('confirm-complete');
+            if (progress === 100) {
+                confirmBtn.style.display = 'inline-block';
+            } else {
+                confirmBtn.style.display = 'none';
+            }
+        }
+
+        function confirmCourseComplete() {
+            // Redirect to dashboard
+            window.location.href = '../../../dashboard.html';
         }
 
         function showNotification(message, type = 'info') {
             document.querySelectorAll('.notification').forEach(n => n.remove());
-            
+
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
             notification.innerHTML = `
                 <span>${message}</span>
                 <button class="notification-close">&times;</button>
             `;
-            
+
             notification.querySelector('.notification-close').addEventListener('click', () => {
                 notification.remove();
             });
-            
+
             document.body.appendChild(notification);
-            
+
             setTimeout(() => {
                 if (notification.parentNode) {
                     notification.remove();

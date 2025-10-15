@@ -108,6 +108,7 @@
 
         .lesson-item.completed {
             border-color: #2563EB;
+            background: #d4e4ff;
         }
 
         .lesson-item:hover {
@@ -325,6 +326,28 @@
             opacity: 0.7;
         }
 
+        .btn-success {
+            background: #2563EB;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-success:hover {
+            background: #3367D6;
+            transform: translateY(-2px);
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
         .lesson-content{
             height: auto;
             max-width: 1200px;
@@ -346,14 +369,20 @@
             margin-bottom: 2rem;
         }
 
-        .lesson-description {
+        h3, p, ul, li, code {
+            max-width: 100% !important;
         }
 
         .lesson-description h3 {
-            max-width: 100% !important;
             font-size: 24px;
             color: #1a1a1a;
             margin-bottom: 16px;
+        }
+
+        .lesson-content .course-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .lesson-description p {
