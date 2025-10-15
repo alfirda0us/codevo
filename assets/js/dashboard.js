@@ -291,3 +291,16 @@ Tim Edukasi
 
     alert('Sertifikat berhasil diklaim! Email telah dibuka di Gmail.');
 }
+
+// Logout function with confirmation
+function logout() {
+    const confirmLogout = confirm('Apakah Anda yakin ingin logout? Semua data akan dihapus.');
+
+    if (confirmLogout) {
+        // Clear all localStorage data
+        localStorage.clear();
+
+        // Redirect to signup page
+        window.location.href = 'pages/signup/signup.html';
+    }
+}
