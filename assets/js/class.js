@@ -6,7 +6,7 @@
             progressPercentage: 0,
             lessons: {
                 1: { completed: false, title: "Selamat datang", duration: "1:00",
-                     desc: `<h3>Selamat Datang di HTML Master</h3><p>Selamat datang di kursus HTML Master! Di kursus ini, Anda akan mempelajari dasar-dasar HTML dari nol hingga mahir.</p><p>HTML adalah fondasi dari semua website. Dengan menguasai HTML, Anda akan dapat membuat struktur website yang solid.</p><p><strong>Apa yang akan Anda pelajari:</strong></p><ul><li>Struktur dasar HTML</li><li>Elemen dan atribut HTML</li><li>Heading, paragraf, dan formatting text</li><li>Link dan navigasi</li><li>Gambar dan multimedia</li><li>List dan tabel</li></ul>` },
+                     desc: `<h3>Selamat Datang di HTML Dasar</h3><p>Selamat datang di kursus HTML Dasar! Di kursus ini, Anda akan mempelajari dasar-dasar HTML dari nol hingga mahir.</p><p>HTML adalah fondasi dari semua website. Dengan menguasai HTML, Anda akan dapat membuat struktur website yang solid.</p><p><strong>Apa yang akan Anda pelajari:</strong></p><ul><li>Struktur dasar HTML</li><li>Elemen dan atribut HTML</li><li>Heading, paragraf, dan formatting text</li><li>Link dan navigasi</li><li>Gambar dan multimedia</li><li>List dan tabel</li></ul>` },
                 2: { completed: false, title: "HTML Introduction", duration: "15:00", 
                      desc: `<h3>Pengenalan HTML</h3><p>HTML (HyperText Markup Language) adalah bahasa markup standar untuk membuat halaman web.</p><ul><li><code>&lt;!DOCTYPE html&gt;</code> - Deklarasi tipe dokumen</li><li><code>&lt;html&gt;</code> - Elemen root</li><li><code>&lt;head&gt;</code> - Meta informasi</li><li><code>&lt;body&gt;</code> - Konten halaman</li></ul>` },
                 3: { completed: false, title: "HTML Basic Structure", duration: "20:00",
@@ -190,8 +190,8 @@
         }
 
         function confirmCourseComplete() {
-            // Redirect to dashboard
-            window.location.href = '../../../dashboard.html';
+            // Redirect to dashboard with certificates section
+            window.location.href = '../../../dashboard.html?section=certificates';
         }
 
         function showNotification(message, type = 'info') {

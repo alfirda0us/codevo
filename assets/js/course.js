@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.disabled = false;
                 
                 // Optional: Change button state to show enrolled
-                this.textContent = 'Sudah Terdaftar';
+                this.textContent = 'Daftar Kelas';
                 this.style.backgroundColor = '#2563EB';
                 this.style.cursor = 'default';
                 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const enrollments = JSON.parse(localStorage.getItem('courseEnrollments') || '{}');
         
         if (enrollments[courseTitle] && enrollButton) {
-            enrollButton.textContent = 'Sudah Terdaftar';
+            enrollButton.textContent = 'Daftar Kelas';
             enrollButton.style.backgroundColor = '#2563EB';
             enrollButton.addEventListener('click', function() {
                 window.location.href = 'open-class.html';

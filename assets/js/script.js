@@ -118,8 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close the banner when the button is clicked
     if (closeButton) {
-        closeButton.addEventListener('click', function () {
+        closeButton.addEventListener('click', ()=> {
             localStorage.setItem('closeBanner', true)
+            banner.style.display = 'none';
         });
     }
 

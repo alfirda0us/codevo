@@ -506,7 +506,6 @@
   margin-top: 5rem !important;
   padding: 2rem 0;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .dashboard-container {
@@ -520,7 +519,6 @@
   background: var(--white);
   border-radius: 15px;
   padding: 2rem;
-  border: 1px solid var(--border);
   height: fit-content;
 }
 
@@ -528,7 +526,6 @@
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .profile-avatar i {
@@ -591,18 +588,17 @@
 }
 
 .nav-btn.logout-btn:hover {
-  background: #3367D6;
+  background: var(--blue);
   color: var(--white);
 }
 
 
 .dashboard-content {
-  width: 70%;
+  min-width: 50rem;
   flex: 1;
   background: var(--white);
   border-radius: 15px;
   padding: 2rem;
-  border: 1px solid var(--border);
 }
 
 .content-header {
@@ -758,12 +754,33 @@
   align-items: center;
   gap: 1rem;
   border: 1px solid var(--border);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .certificate-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-card.locked {
+  opacity: 0.7;
+  background: #f8f9fa;
+}
+
+.certificate-card.locked .certificate-icon i {
+  color: #6c757d;
+}
+
+.course-not-completed {
+  color: #dc3545;
+  font-size: 14px;
+  margin: 5px 0 0 0;
+  font-weight: 500;
+}
+
+.locked-text {
+  color: #6c757d;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .certificate-icon {
@@ -809,8 +826,83 @@
 .btn-claim:hover {
   background: var(--blue-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
+
+/* Profile Form Styles */
+.btn-save {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-save:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.profile-form {
+  max-width: 500px;
+}
+
+.profile-form h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(46, 112, 255, 0.1);
+}
+
+.form-group input:invalid {
+  border-color: #dc3545;
+}
+
+.form-group input:invalid:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
 
 @media (max-width: 768px) {
   .dashboard-container {

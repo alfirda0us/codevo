@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body>
   <div class="cursor-circle"></div>
@@ -89,14 +91,11 @@
                 </div>
 
                 <nav class="sidebar-nav">
-                    <button class="nav-btn active" onclick="showDashboard()">
-                        <i class="fa-solid fa-chart-line"></i>
-                        Dashboard
+                    <button class="nav-btn" onclick="showProfile()">
+                        <i class="fa-solid fa-user"></i>
+                        Profil
                     </button>
-                    <button class="nav-btn" onclick="showClasses()">
-                        <i class="fa-solid fa-book"></i>
-                        Daftar Kelas
-                    </button>
+
                     <button class="nav-btn" onclick="showCertificates()">
                         <i class="fa-solid fa-certificate"></i>
                         Sertifikat
@@ -111,48 +110,27 @@
             <!-- Main Content -->
             <div class="dashboard-content">
                 <div class="content-header">
-                    <h1 id="content-title">Dashboard</h1>
+                    <h1 id="content-title">Profil</h1>
                 </div>
 
-                <!-- Dashboard Stats -->
-                <div id="dashboard-view" class="content-view active">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-book-open"></i>
+                <!-- Profile View -->
+                <div id="profile-view" class="content-view active">
+                    <div class="profile-form">
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="profile-name">Nama Lengkap</label>
+                                <input type="text" id="profile-name" required>
                             </div>
-                            <div class="stat-info">
-                                <h3 id="enrolled-count">0</h3>
-                                <p>Kelas diikuti</p>
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" required>
                             </div>
-                        </div>
-
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-certificate"></i>
+                            <div class="form-group">
+                                <label for="profile-username">Username</label>
+                                <input type="text" id="profile-username" required>
                             </div>
-                            <div class="stat-info">
-                                <h3 id="certificates-count">0</h3>
-                                <p>Total Sertifikat</p>
-                            </div>
-                        </div>
-
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3 id="rating-count">0.0</h3>
-                                <p>Rating Siswa</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Classes View -->
-                <div id="classes-view" class="content-view">
-                    <div class="classes-list" id="classes-list">
-                        <!-- Classes will be loaded here -->
+                            <button type="submit" class="btn-save">Simpan Perubahan</button>
+                        </form>
                     </div>
                 </div>
 
