@@ -130,7 +130,7 @@ function loadClasses() {
                         <p>Progress: 50%</p>
                     </div>
                     <div class="class-actions">
-                        <button class="btn-detail" onclick="viewCourse('${courseTitle}')">Detail Kelas</button>
+                        <button class="btn-detail" onclick="viewCourse(\`${courseTitle}\`)">Detail Kelas</button>
                     </div>
                 </div>
             `).join('');
