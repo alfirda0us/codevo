@@ -1,4 +1,0 @@
-- [x] Tambahkan tombol "Konfirmasi Kelas Selesai" di video-controls ketika progress 100%
-- [x] Implementasi logika untuk menampilkan tombol ketika progressPercentage === 100
-- [x] Tambahkan event listener untuk redirect ke dashboard saat tombol diklik
-- [x] Update CSS jika diperlukan untuk styling tombol
