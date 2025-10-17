@@ -214,9 +214,8 @@ function loadCertificates() {
                             ${!isCourseCompleted ? '<p class="course-not-completed">Kursus belum diselesaikan</p>' : ''}
                         </div>
                         <div class="class-actions">
-                            ${cert.claimed ? '<span class="claimed-text">Terklaim</span>' :
-                             !isCourseCompleted ? '<span class="locked-text">Terkunci</span>' :
-                             `<button class="btn-claim" onclick="claimCertificate('${cert.id}')">Klaim</button>`}
+                            ${!isCourseCompleted ? '<span class="locked-text">Terkunci</span>' :
+                             `<button class="btn-claim" onclick="claimCertificate('${cert.id}')">${cert.claimed ? 'Download Ulang' : 'Klaim'}</button>`}
                         </div>
                     </div>
                 `;
@@ -363,52 +362,48 @@ function claimCertificate(certId) {
     }
 
     const cert = certificates[certIndex];
-    if (cert.claimed) {
-        alert('Sertifikat sudah diklaim.');
-        return;
-    }
-
-    if (!currentUser.email) {
-        alert('Email pengguna tidak ditemukan. Silakan login ulang.');
-        return;
-    }
+    // Allow re-download for already claimed certificates
 
     // Generate certificate number (random 8-digit)
     const certNumber = Math.floor(10000000 + Math.random() * 90000000);
 
-    // Construct Gmail compose URL
-    const subject = encodeURIComponent(`Sertifikat Kursus - ${cert.courseName}`);
-    const body = encodeURIComponent(`
-Selamat! Anda telah menyelesaikan kursus ${cert.courseName}.
+    // Convert date from "15 Januari 2024" to "2024-01-15"
+    const dateParts = cert.date.split(' ');
+    const day = dateParts[0];
+    const monthName = dateParts[1];
+    const year = dateParts[2];
 
-Detail Sertifikat:
-- Nama: ${currentUser.name}
-- Kursus: ${cert.courseName}
-- Tanggal Penyelesaian: ${cert.date}
-- Nomor Sertifikat: ${certNumber}
+    const monthMap = {
+        'Januari': '01', 'Februari': '02', 'Maret': '03', 'April': '04',
+        'Mei': '05', 'Juni': '06', 'Juli': '07', 'Agustus': '08',
+        'September': '09', 'Oktober': '10', 'November': '11', 'Desember': '12'
+    };
+    const month = monthMap[monthName];
+    const formattedDate = `${year}-${month}-${day.padStart(2, '0')}`;
 
-Terima kasih telah belajar di platform kami!
+    // Prepare data for POST
+    const postData = new FormData();
+    postData.append('name', currentUser.name);
+    postData.append('course', cert.courseName);
+    postData.append('date', formattedDate);
 
-Salam,
-Tim Edukasi
-    `.trim());
+    // Generate PDF using client-side JavaScript
+    generateCertificate(currentUser.name, cert.courseName, formattedDate);
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(currentUser.email)}&su=${subject}&body=${body}`;
+    // Only mark as claimed if it wasn't already claimed
+    if (!cert.claimed) {
+        certificates[certIndex].claimed = true;
+        certificates[certIndex].claimedDate = new Date().toLocaleDateString('id-ID');
+        certificates[certIndex].certificateNumber = certNumber;
 
-    // Open Gmail compose in new tab
-    window.open(gmailUrl, '_blank');
+        localStorage.setItem('certificates', JSON.stringify(certificates));
 
-    // Mark as claimed
-    certificates[certIndex].claimed = true;
-    certificates[certIndex].claimedDate = new Date().toLocaleDateString('id-ID');
-    certificates[certIndex].certificateNumber = certNumber;
+        // Reload certificates to update UI
+        loadCertificates();
 
-    localStorage.setItem('certificates', JSON.stringify(certificates));
-
-    // Reload certificates to update UI
-    loadCertificates();
-
-    alert('Sertifikat berhasil diklaim! Email telah dibuka di Gmail.');
+        alert('Sertifikat berhasil diklaim! PDF sedang diunduh.');
+    }
+    // For re-downloads, PDF downloads directly without alert
 }
 
 // Check if a course is completed

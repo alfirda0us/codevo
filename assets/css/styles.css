@@ -51,6 +51,9 @@
     text-decoration: none;
     font-style: none;
   }
+  .ketengahin{
+    padding-inline: 2rem;
+  }
   .container {
     max-width: 1200px; 
     padding: 0 16px;
@@ -59,6 +62,7 @@
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
+    margin-top: 1.5rem !important;
     padding: 10px 0;
   }
   header .logo {
@@ -116,7 +120,7 @@
     width: 100%;
     font-size: 1rem; 
     color: var(--text-primary);
-    background-color: var(--bg-muted);
+    background-color: transparent;
   }
   .search-input input[type="text"]:focus {
     outline: none;
@@ -210,7 +214,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 5px;
   }
   .video-section .video-header h3{
     font-size: 2.1rem !important;
@@ -495,10 +499,9 @@
     display: none;
   }
   .hero-desc {
-  font-size: 1.15rem;
   color: #475569;
   margin: 18px 0 24px 0;
-  max-width: 480px;
+  max-width: 400px;
 }
 
 /* Dashboard Styles */
@@ -828,6 +831,194 @@
   transform: translateY(-1px);
 }
 
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
+  border-radius: 24px;
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-btn:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(46, 112, 255, 0.3);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder-image {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue) 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(46, 112, 255, 0.2);
+}
+
+/* Logo Partners Section */
+.partners-section {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.partners-section h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.partner-logo {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  height: 80px;
+}
+
+.partner-logo:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(46, 112, 255, 0.15);
+}
+
+/* Features Section */
+.features-section {
+  padding: 4rem 0;
+  background: var(--white);
+  border-radius: 24px;
+  margin: 2rem 0;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.features-header h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.codevo-logo {
+  width: 60px;
+  height: 60px;
+  margin-top: 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--bg-muted);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(46, 112, 255, 0.1);
+  border-color: var(--blue);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 /* Profile Form Styles */
 .btn-save {
   background: var(--blue);
@@ -895,16 +1086,101 @@
 }
 
 .form-group input:invalid {
-  border-color: #dc3545;
+  border-color: var(--blue-dark);
 }
 
 .form-group input:invalid:focus {
-  border-color: #dc3545;
+  border-color: var(--blue-dark);
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
 }
 
+.help-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (max-width: 768px) {
+.help-header{
+  width: 100%;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--blue) !important;
+  padding-block: 4rem;
+  margin-block: 2rem;
+  color: var(--white);
+  border-radius: 1rem;
+}
+
+.help-header h3{
+  font-size: 3rem !important;
+  text-align: center;
+  width: 100%;
+}
+
+.help-header .search-input {
+  border: 1px solid var(--white); 
+}
+
+.help-header .search-input input{
+  color: var(--white);
+}
+.help-header .search-input .cari-icon {
+  background-color: var(--white);
+  color:  var(--blue);
+}
+.help-header .search-input .cari-icon h6{
+  font-weight: 600;
+}
+.help-header .search-input input[type="text"] {
+  color: var(--white);
+}
+.help-header .search-input input::placeholder {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.help-guides{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.help-card .card-body {
+  text-align: start;
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.help-card p {
+  text-align: justify;
+  color: var(--text-muted);
+}
+
+.help-card a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 600;
+  background-color: var(--white);
+}
+
+
+@media screen and (max-width: 768px) {
   .dashboard-container {
     flex-direction: column;
     gap: 1.5rem;

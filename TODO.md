@@ -1,0 +1,5 @@
+- [x] Tambahkan Hero Section di index.html
+- [x] Tambahkan Logo Partners Section di index.html
+- [x] Tambahkan Features Section di index.html
+- [x] Tambahkan CSS styling di styles.css untuk section baru
+- [x] Test responsive dan hover effects

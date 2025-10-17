@@ -20,10 +20,10 @@
       <i class="fa-solid fa-xmark " id="close-banner"></i>
     </div>
 
-    <header class="mt-2">
+    <header>
       <div class="logo">
         <a href="index.html">
-        <img src="assets/src/icon/iconwithtext.svg" alt="logo" tilt-disabled>
+        <img src="assets/src/icon/iconwithtext.svg" alt="logo">
         </a>
       </div>
       <nav class="navbar navbar-expand-lg">
@@ -37,7 +37,18 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="classes.html">Semua Kelas</a></li>
                   <li><a class="dropdown-item" href="#kelas-populer">Kelas Populer</a></li>
-                  <li><a class="dropdown-item" href="#">Sertifikat</a></li>
+                  <li><a class="dropdown-item" href="dashboard.html">Sertifikat</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Berita & Insight
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="help.html">Artikel Terbaru</a></li>
+                  <li><a class="dropdown-item" href="#">Tips Belajar</a></li>
+                  <li><a class="dropdown-item" href="#">Event & Webinar</a></li>
+                  <li><a class="dropdown-item" href="#">Pengunguman</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -47,32 +58,18 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Profil Codevo</a></li>
                   <li><a class="dropdown-item" href="#">Tim Pengajar</a></li>
-                  <li><a class="dropdown-item" href="#">Testimoni</a></li>
-                  <li><a class="dropdown-item" href="#">Kontak</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 Berita & Insight
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Artikel Terbaru</a></li>
-                  <li><a class="dropdown-item" href="#">Tips Belajar</a></li>
-                  <li><a class="dropdown-item" href="#">Event & Webinar</a></li>
-                  <li><a class="dropdown-item" href="#">Pengunguman</a></li>
+                  <li><a class="dropdown-item" href="#footer">Kontak</a></li>
                 </ul>
               </li>
             </ul>
           </div>
       <div class="nav-icon d-flex gap-lg-3">
-        <a href="dashboard.html" onclick="showCertificates()"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a href="dashboard.html" onclick="loadProfileForm()"><i class="fa-solid fa-circle-user"></i></a>
+        <a href="help.html"><i class="fa-solid fa-newspaper"></i></a>
+        <a href="dashboard.html"><i class="fa-solid fa-circle-user"></i></a>
       </div>
         </div>
       </nav>
     </header>
-
-    <div class="welcome-text" id="welcome-text"></div>
 
     <main>
       <section class="highlight" aria-label="Highlight kelas">
@@ -130,14 +127,110 @@
       </div>
     </section>
 
-    <section class="video-section">
+    <section class="video-section ketengahin">
       <div class="video-header">
         <h3 class="mb-0"><span>Tidak perlu</span> keluar <span>uang</span> untuk bisa jadi <span>Expert</span></h3>
         <p class="hero-desc">Belajar gratis, akses materi berkualitas, dan raih skill baru tanpa hambatan biaya. Codevo mendukung semua orang untuk berkembang di dunia digital!</p>
         <a href="classes.html" class="btn-primary text-decoration-none" style="padding: 10px 24px; border-radius: 9999px;">Cari Kelas</a>
       </div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/CH-j74vgE4g?si=vbz12WuwrB97pR-T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section> 
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Codevo telah memberikan dampak positif bagi Talenta Digital Indonesia</h2>
+          <p>Platform pendidikan dengan blended-learning yang menggabungkan pembelajaran online dan offline untuk memberikan pengalaman belajar yang optimal.</p>
+          <a href="#" class="btn-primary hero-btn">Kelas Demo</a>
+        </div>
+        <div class="hero-image">
+          <div class="placeholder-image">Ilustrasi Belajar</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Partners Section -->
+    <section class="partners-section">
+      <h3>Perusahaan yang bekerja sama dengan kami</h3>
+      <div class="partners-grid">
+        <div class="partner-logo">Partner 1</div>
+        <div class="partner-logo">Partner 2</div>
+        <div class="partner-logo">Partner 3</div>
+        <div class="partner-logo">Partner 4</div>
+        <div class="partner-logo">Partner 5</div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="features-header">
+        <h3>Alasan kenapa belajar bersama <span>Codevo</span></h3>
+        <img src="assets/src/icon/icon.svg" alt="Codevo Logo" class="codevo-logo">
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">▶️</div>
+          <h4>Video Interaktif</h4>
+          <p>Materi pembelajaran dalam bentuk video yang interaktif dan mudah dipahami.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h4>E-Sertifikat</h4>
+          <p>Dapatkan sertifikat digital setelah menyelesaikan kursus dengan baik.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">♾️</div>
+          <h4>Akses Selamanya</h4>
+          <p>Materi kursus dapat diakses kapan saja tanpa batas waktu.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h4>100% Gratis</h4>
+          <p>Belajar tanpa biaya sepeserpun, akses penuh untuk semua orang.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="testimonials-header">
+        <h3>Apa kata mereka yang belajar disini?</h3>
+        <p>Lebih dari 100+ Talenta Digital telah berhasil belajar dan berkembang bersama Codevo.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Codevo memberikan pengalaman belajar yang luar biasa. Materi yang disajikan sangat mudah dipahami dan aplikatif."</p>
+          <div class="testimonial-profile">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-info">
+              <h5>Ahmad Rahman</h5>
+              <p>Web Builder at EDJL</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Terima kasih Codevo atas kesempatan belajar gratis. Sekarang saya bisa membangun aplikasi mobile sendiri."</p>
+          <div class="testimonial-profile">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-info">
+              <h5>Sari Dewi</h5>
+              <p>App Developer at TechCorp</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Platform yang sangat membantu untuk memulai karir di dunia digital. Materi lengkap dan mentor yang responsif."</p>
+          <div class="testimonial-profile">
+            <div class="profile-avatar">👤</div>
+            <div class="profile-info">
+              <h5>Budi Santoso</h5>
+              <p>UI/UX Designer at DesignHub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="courses-section d-flex flex-column align-items-center justify-content-evenly" aria-label="Pilihan kelas populer" id="kelas-populer">
       <h3>Pilihan kelas <span>Populer</span>.</h3>
@@ -188,7 +281,7 @@
 
     <section class="faq-section">
       <h3>FA<span>Q</span>.</h3>
-    <div class="faq-item">
+      <div class="faq-item">
       <div class="faq-question">
         <span class="faq-number">01</span>
         <span class="faq-title">Berapa Harga kelas dari Codevo?</span>
@@ -197,8 +290,8 @@
       <div class="faq-answer">
         Semua kelas di Codevo 100% gratis tanpa biaya sepeserpun. Kami percaya bahwa akses pendidikan digital harus terbuka untuk semua anak bangsa, demi mendukung terciptanya Indonesia Emas 2045.
       </div>
-    </div>
-    <div class="faq-item">
+      </div>
+      <div class="faq-item">
       <div class="faq-question">
         <span class="faq-number">02</span>
         <span class="faq-title">Apakah kelas di Codevo cocok untuk pemula?</span>
@@ -207,8 +300,8 @@
       <div class="faq-answer">
         Sangat cocok! Materi disusun mulai dari dasar hingga tingkat lanjut. Dengan pembelajaran bertahap, siapa pun bisa mulai belajar digital skills tanpa takut ketinggalan.
       </div>
-    </div>
-    <div class="faq-item">
+      </div>
+      <div class="faq-item">
       <div class="faq-question">
         <span class="faq-number">03</span>
         <span class="faq-title">Bagaimana Codevo berkontribusi untuk Indonesia Emas?</span>
@@ -217,10 +310,10 @@
       <div class="faq-answer">
         Codevo hadir untuk mencetak generasi muda yang melek digital dan siap bersaing di era global. Melalui pembelajaran gratis, kami ingin melahirkan talenta-talenta digital Indonesia yang inovatif, kreatif, dan mampu membawa bangsa menuju Indonesia Emas 2045.
       </div>
-    </div>
+      </div>
     </section>
 
-    <section class="footer d-flex flex-column align-items-start justify-content-around text-start gap-4 pt-2">
+    <section class="footer d-flex flex-column align-items-start justify-content-around text-start gap-4 pt-2" id="footer">
         <div class="footer-top">
             <div class="logo d-flex flex-column justify-content-center gap-2 pt-4">
                <img src="assets/src/icon/iconwithtext.svg" alt="logo">
@@ -249,10 +342,11 @@
             </div>
         </div>
         <div class="footer-bottom d-flex w-100 justify-content-between align-items-end border-top pt-4">
-                <p>© 2025 Codevo. All rights reserved.</p>            
+                <p>© 2025 Codevo. All rights reserved.</p>
+
         </div>
-        
-        
+
+
 
     </section>
 
@@ -262,7 +356,6 @@
   <script src="https://kit.fontawesome.com/fb8d0c8468.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/dashboard.js"></script>
   <script>
   </script>
 </body>

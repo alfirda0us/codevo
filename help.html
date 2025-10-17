@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Codevo - Dashboard</title>
+<title>Codevo - Pusat Bantuan</title>
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/help.css">
 <link rel="icon" type="svg" href="assets/src/icon/icon.svg">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body>
   <div class="cursor-circle"></div>
@@ -75,73 +74,53 @@
         </div>
       </nav>
     </header>
+    
 
-    <main class="dashboard-main">
-        <div class="dashboard-container">
-            <!-- Sidebar -->
-            <aside class="dashboard-sidebar">
-                <div class="sidebar-profile">
-                    <div class="profile-avatar">
-                        <i class="fa-solid fa-user-circle"></i>
-                    </div>
-                    <div class="profile-info">
-                        <h3 id="user-name">Nama User</h3>
-                        <p>Pelajar</p>
-                    </div>
-                </div>
-
-                <nav class="sidebar-nav">
-                    <button class="nav-btn" onclick="showProfile()">
-                        <i class="fa-solid fa-user"></i>
-                        Profil
-                    </button>
-
-                    <button class="nav-btn" onclick="showCertificates()">
-                        <i class="fa-solid fa-certificate"></i>
-                        Sertifikat
-                    </button>
-                    <button class="nav-btn logout-btn" onclick="logout()">
-                        <i class="fa-solid fa-sign-out-alt"></i>
-                        Logout
-                    </button>
-                </nav>
-            </aside>
-
-            <!-- Main Content -->
-            <div class="dashboard-content">
-                <div class="content-header">
-                    <h1 id="content-title">Profil</h1>
-                </div>
-
-                <!-- Profile View -->
-                <div id="profile-view" class="content-view active">
-                    <div class="profile-form">
-                        <form id="profile-form">
-                            <div class="form-group">
-                                <label for="profile-name">Nama Lengkap</label>
-                                <input type="text" id="profile-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="profile-email">Email</label>
-                                <input type="email" id="profile-email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="profile-username">Username</label>
-                                <input type="text" id="profile-username" required>
-                            </div>
-                            <button type="submit" class="btn-save">Simpan Perubahan</button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Certificates View -->
-                <div id="certificates-view" class="content-view">
-                    <div class="certificates-list" id="certificates-list">
-                        <!-- Certificates will be loaded here -->
-                    </div>
-                </div>
-            </div>
+    <main class="help-container d-flex flex-column">
+      <section class="help-header">
+        <h3 class="mw-100">How can we help you?</h3>
+        <div class="search-input" id="search-input">
+          <div class="cari-icon d-flex align-items-center justify-content-center gap-1">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h6 class="mt-2">Cari</h6>
+          </div>
+          <input type="text" placeholder="cari kelasmu disini.." aria-label="Cari kelas" />
         </div>
+      </section>
+
+      <section class="help-guides bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="help-card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fw-bolder fs-4">Profil Codevo</h5>
+                  <p class="card-text">Pelajari cara mendaftar, membuat akun, dan memilih kelas pertama Anda di Codevo.</p>
+                  <a href="#">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="help-card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fw-bolder fs-4">Tips belajar</h5>
+                  <p class="card-text">Panduan lengkap untuk mengakses video, menyelesaikan tugas, dan berinteraksi dengan materi pembelajaran.</p>
+                  <a href="#">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="help-card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fw-bolder fs-4">Event & Webinar</h5>
+                  <p class="card-text">Cara mendapatkan dan mengunduh sertifikat kelulusan setelah menyelesaikan kelas.</p>
+                  <a href="#">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <section class="footer d-flex flex-column align-items-start justify-content-around text-start gap-4 pt-2">
@@ -174,18 +153,15 @@
         </div>
         <div class="footer-bottom d-flex w-100 justify-content-between align-items-end border-top pt-4">
                 <p>© 2025 Codevo. All rights reserved.</p>
-
+            
         </div>
-
-
+        
+        
 
     </section>
-
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/fb8d0c8468.js" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
-  <script src="certificate/generate_certificate.js"></script>
-  <script src="assets/js/dashboard.js"></script>
 </body>
 </html>
